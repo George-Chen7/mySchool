@@ -134,7 +134,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/img_10003"
             android:scaleType="fitXY"
-            android:alpha="0.12"
+            android:alpha="0.999    "
             android:contentDescription="背景底图" />
 
         <LinearLayout
