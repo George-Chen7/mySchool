@@ -124,17 +124,29 @@
             android:background="@color/white" />
     </LinearLayout>
 
-    <!-- News List -->
-    <LinearLayout
-        android:id="@+id/news_container"
+    <!-- News List with background image -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_10003"
+            android:scaleType="fitXY"
+            android:alpha="0.12"
+            android:contentDescription="背景底图" />
+
+        <LinearLayout
+            android:id="@+id/news_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/transparent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
 
         <TextView android:layout_width="match_parent" android:layout_height="24dp" android:text="[专栏] 关于2026年五一放假安排的通知" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_small" android:gravity="center_vertical" android:singleLine="true" android:ellipsize="end" />
         <TextView android:layout_width="match_parent" android:layout_height="24dp" android:text="[科研] 国家自然科学基金项目申报通知" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_small" android:gravity="center_vertical" android:singleLine="true" android:ellipsize="end" />
@@ -151,7 +163,9 @@
         <TextView android:layout_width="match_parent" android:layout_height="24dp" android:text="[专栏] 深圳大学建校43周年校庆系列活动" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_small" android:gravity="center_vertical" android:singleLine="true" android:ellipsize="end" />
         <TextView android:layout_width="match_parent" android:layout_height="24dp" android:text="[行政] 关于2026年财务报销系统升级的通知" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_small" android:gravity="center_vertical" android:singleLine="true" android:ellipsize="end" />
         <TextView android:layout_width="match_parent" android:layout_height="24dp" android:text="[科研] 2026年度深圳市科创委项目申报指南" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_small" android:gravity="center_vertical" android:singleLine="true" android:ellipsize="end" />
-    </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
 
     <!-- Date Bar -->
     <TextView
