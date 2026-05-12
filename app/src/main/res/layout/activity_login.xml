@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/szu_light"
+        android:gravity="center_horizontal">
+
+        <!-- Top Branding Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.38"
+            android:background="@color/szu_dark"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="48dp"
+            android:paddingBottom="28dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/img_10001"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/university_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/university_name_en"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:letterSpacing="0.15"
+                android:layout_marginTop="10dp"
+                android:alpha="0.85" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/university_name"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/campus_app_name"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="2dp"
+                android:alpha="0.75" />
+        </LinearLayout>
+
+        <!-- Login Form Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.48"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:elevation="4dp"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_title"
+                    android:textColor="@color/szu_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center" />
+
+                <!-- Username -->
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/login_username_hint"
+                    android:textColor="@color/szu_text_primary"
+                    android:textColorHint="@color/szu_text_hint"
+                    android:textSize="15sp"
+                    android:inputType="text"
+                    android:background="@drawable/bg_input_rounded"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Password -->
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/login_password_hint"
+                    android:textColor="@color/szu_text_primary"
+                    android:textColorHint="@color/szu_text_hint"
+                    android:textSize="15sp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/bg_input_rounded"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Remember Password -->
+                <CheckBox
+                    android:id="@+id/cb_remember_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_remember_pwd"
+                    android:textColor="@color/szu_text_secondary"
+                    android:textSize="13sp"
+                    android:buttonTint="@color/szu_primary"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Error Message -->
+                <TextView
+                    android:id="@+id/tv_login_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/szu_accent"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Login Button -->
+                <TextView
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/login_button"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@drawable/bg_login_btn" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bottom Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:background="@color/szu_dark"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_copyright"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:alpha="0.7" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
