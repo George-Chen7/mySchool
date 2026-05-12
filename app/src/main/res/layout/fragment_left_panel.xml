@@ -151,9 +151,9 @@
 
     <!-- Date Bar -->
     <TextView
+        android:id="@+id/tv_date_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/date_bar_height"
-        android:text="2026年5月12日  星期二  本学期第10周（查看校历）"
         android:textColor="@color/white"
         android:textSize="@dimen/text_body"
         android:gravity="center"

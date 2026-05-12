@@ -13,8 +13,20 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.ex3.R
+import java.util.Calendar
+import java.util.concurrent.TimeUnit
 
 class LeftPanelFragment : Fragment() {
+
+    // 2026年春季学期开学日（周一）
+    private val semesterStart by lazy {
+        Calendar.getInstance().apply {
+            set(2026, Calendar.MARCH, 9)
+        }
+    }
+
+    private val weekDayNames = arrayOf("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,8 +36,26 @@ class LeftPanelFragment : Fragment() {
 
         setupSpinner(view)
         styleNewsItems(view)
+        setupDateBar(view)
 
         return view
+    }
+
+    private fun setupDateBar(view: View) {
+        val dateBar = view.findViewById<TextView>(R.id.tv_date_bar)
+        val now = Calendar.getInstance()
+
+        val year = now.get(Calendar.YEAR)
+        val month = now.get(Calendar.MONTH) + 1
+        val day = now.get(Calendar.DAY_OF_MONTH)
+        val weekDay = weekDayNames[now.get(Calendar.DAY_OF_WEEK) - 1]
+
+        // 计算学期第几周
+        val diffMs = now.timeInMillis - semesterStart.timeInMillis
+        val diffDays = TimeUnit.MILLISECONDS.toDays(diffMs)
+        val weekNumber = ((diffDays / 7) + 1).coerceAtLeast(1).toInt()
+
+        dateBar.text = "${year}年${month}月${day}日  $weekDay  本学期第${weekNumber}周（查看校历）"
     }
 
     private fun setupSpinner(view: View) {
