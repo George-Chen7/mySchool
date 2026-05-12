@@ -1,5 +1,7 @@
 package com.example.ex3.ui.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -45,7 +47,7 @@ class LeftPanelFragment : Fragment() {
 
         // 进入公网通
         view.findViewById<TextView>(R.id.btn_enter).setOnClickListener {
-            Toast.makeText(ctx, "校园公网通 — 功能待上线", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www1.szu.edu.cn/board/")))
         }
 
         // 授权须知
