@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- SZU Portal Color Palette -->
+    <color name="szu_dark">#950040</color>
+    <color name="szu_primary">#C70E5C</color>
+    <color name="szu_accent">#E64F80</color>
+    <color name="szu_panel">#ECE3EB</color>
+    <color name="szu_light">#FAF1F5</color>
+    <color name="szu_bg">#F3F3F5</color>
+
+    <!-- Border -->
+    <color name="szu_border">#D0C7CF</color>
+
+    <!-- Text Colors -->
+    <color name="szu_text_primary">#333333</color>
+    <color name="szu_text_secondary">#666666</color>
+    <color name="szu_text_hint">#999999</color>
+
+    <!-- Basic -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Legacy (kept for compatibility) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>

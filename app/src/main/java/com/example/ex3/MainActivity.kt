@@ -1,60 +1,51 @@
 package com.example.ex3
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.widget.ArrayAdapter
+import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.compose.rememberNavController
-import com.example.ex3.session.SessionManager
-import com.example.ex3.ui.components.ForceOfflineDialog
-import com.example.ex3.ui.navigation.AdaptiveDashboard
-import com.example.ex3.ui.navigation.NavGraph
-import com.example.ex3.ui.navigation.Routes
-import com.example.ex3.ui.theme.Ex3Theme
-import com.example.ex3.viewmodel.LoginViewModel
+import androidx.core.content.ContextCompat
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            val navController = rememberNavController()
-            val forceLogoutEvent by SessionManager.forceLogoutEvent.collectAsState()
-            val currentRoute = navController.currentBackStackEntry?.destination?.route
+        setContentView(R.layout.activity_main)
 
-            Ex3Theme {
-                NavGraph(
-                    navController = navController,
-                    dashboardContent = { modifier ->
-                        AdaptiveDashboard(
-                            widthSizeClass = androidx.compose.material3.windowsizeclass
-                                .calculateWindowSizeClass(this).widthSizeClass,
-                            onProfileClick = {
-                                navController.navigate(Routes.PROFILE)
-                            },
-                            onLogoutClick = {
-                                SessionManager.forceLogout("您已注销。")
-                            }
-                        )
-                    }
-                )
+        setupSpinner()
+        styleNewsItems()
+    }
 
-                // Show force offline dialog when event triggers
-                if (forceLogoutEvent != null && currentRoute != Routes.LOGIN) {
-                    ForceOfflineDialog(
-                        reason = forceLogoutEvent ?: "您的账号已在其他设备登录。",
-                        onReLogin = {
-                            SessionManager.clearForceLogoutEvent()
-                            navController.navigate(Routes.LOGIN) {
-                                popUpTo(0) { inclusive = true }
-                            }
-                        }
+    private fun setupSpinner() {
+        val spinner = findViewById<Spinner>(R.id.spinner_user_type)
+        val options = arrayOf("阅览用户", "教职工", "学生", "访客")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+    }
+
+    private fun styleNewsItems() {
+        // Color the category labels red in news items
+        val newsContainer = findViewById<LinearLayout>(R.id.news_container)
+        val redColor = ContextCompat.getColor(this, R.color.szu_accent)
+
+        for (i in 0 until newsContainer.childCount) {
+            val child = newsContainer.getChildAt(i)
+            if (child is TextView) {
+                val text = child.text.toString()
+                val bracketEnd = text.indexOf(']')
+                if (bracketEnd > 0) {
+                    val spannable = SpannableString(text)
+                    spannable.setSpan(
+                        ForegroundColorSpan(redColor),
+                        0, bracketEnd + 1,
+                        SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
+                    child.text = spannable
                 }
             }
         }

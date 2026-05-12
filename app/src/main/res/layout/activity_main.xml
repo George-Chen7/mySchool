@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="horizontal"
+    android:background="@color/szu_bg">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="@dimen/content_width"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/szu_bg">
+
+            <!-- ==================== HEADER ==================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <!-- LEFT: University Logo Area (38%, dark wine bg) -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.38"
+                    android:background="@color/szu_dark"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Logo -->
+                        <ImageView
+                            android:id="@+id/iv_logo"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:src="@drawable/img_logo"
+                            android:scaleType="fitCenter"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp" />
+
+                        <!-- University Name -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="深圳大学"
+                                android:textColor="@color/white"
+                                android:textSize="34sp"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif"
+                                android:includeFontPadding="false" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SHENZHEN UNIVERSITY"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:fontFamily="serif"
+                                android:letterSpacing="0.08"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- RIGHT: Banner Image (62%) -->
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.62"
+                    android:src="@drawable/img_banner"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <!-- ==================== LOGIN NAVIGATION BAR ==================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_bar_height"
+                android:orientation="horizontal"
+                android:background="@color/szu_panel"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <!-- User avatar placeholder -->
+                <View
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/ic_user_placeholder"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="陈己润"
+                    android:textColor="@color/szu_text_primary"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  |  "
+                    android:textColor="@color/szu_border"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人中心"
+                    android:textColor="@color/szu_text_secondary"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  |  "
+                    android:textColor="@color/szu_border"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="注册"
+                    android:textColor="@color/szu_text_secondary"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  |  "
+                    android:textColor="@color/szu_border"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="说明"
+                    android:textColor="@color/szu_text_secondary"
+                    android:textSize="@dimen/text_body" />
+            </LinearLayout>
+
+            <!-- ==================== MAIN CONTENT AREA ==================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <!-- ========== LEFT COLUMN (38%) ========== -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.38"
+                    android:orientation="vertical"
+                    android:background="@color/szu_bg"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="4dp"
+                    android:paddingTop="8dp">
+
+                    <!-- 校园公网通 Module -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/border_box"
+                        android:padding="@dimen/padding_page">
+
+                        <!-- Title row -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_gongwangtong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="校园公网通"
+                                android:textColor="@color/szu_primary"
+                                android:textSize="@dimen/text_title"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:text="《授权须知》"
+                                android:textColor="@color/szu_text_hint"
+                                android:textSize="@dimen/text_small" />
+                        </RelativeLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="@color/szu_border"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="12dp" />
+
+                        <!-- Spinner + Button row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <Spinner
+                                android:id="@+id/spinner_user_type"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.55"
+                                android:background="@drawable/border_box"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp" />
+
+                            <TextView
+                                android:id="@+id/btn_enter"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.45"
+                                android:layout_marginStart="8dp"
+                                android:text="进入公网通"
+                                android:textColor="@color/szu_text_primary"
+                                android:textSize="@dimen/text_body"
+                                android:gravity="center"
+                                android:background="@drawable/btn_white_border" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                    <!-- News Tab Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal"
+                        android:background="@color/szu_border">
+
+                        <!-- 重要通知 (selected) -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="1px"
+                            android:text="重要通知"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_body"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:background="@color/szu_primary" />
+
+                        <!-- 深大新闻 -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="1px"
+                            android:text="深大新闻"
+                            android:textColor="@color/szu_primary"
+                            android:textSize="@dimen/text_body"
+                            android:gravity="center"
+                            android:background="@color/white" />
+
+                        <!-- 学术讲座 -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="学术讲座"
+                            android:textColor="@color/szu_primary"
+                            android:textSize="@dimen/text_body"
+                            android:gravity="center"
+                            android:background="@color/white" />
+                    </LinearLayout>
+
+                    <!-- News List -->
+                    <LinearLayout
+                        android:id="@+id/news_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[专栏] 关于2026年五一放假安排的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:drawablePadding="0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[科研] 国家自然科学基金项目申报通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[教务] 2025-2026学年第二学期选课通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[行政] 关于做好寒假期间安全工作的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[科研] 深圳大学2026年国家社科基金申报公告"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[教务] 关于2026届毕业生毕业论文工作的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[专栏] 学习贯彻党的二十届三中全会精神"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[科研] 关于征集2026年度重点研发计划项目指南"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[行政] 关于2026年教职工年度考核工作的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[教务] 2026年硕士研究生招生考试考点公告"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[科研] 关于组织申报广东省重点实验室的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[教务] 2026年本科生转专业工作通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[专栏] 深圳大学建校43周年校庆系列活动"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[行政] 关于2026年财务报销系统升级的通知"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="[科研] 2026年度深圳市科创委项目申报指南"
+                            android:textColor="@color/szu_text_primary"
+                            android:textSize="@dimen/text_small"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+
+                    <!-- Date Bar -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/date_bar_height"
+                        android:text="2026年5月12日  星期二  本学期第10周（查看校历）"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_body"
+                        android:gravity="center"
+                        android:background="@color/szu_primary" />
+                </LinearLayout>
+
+                <!-- ========== RIGHT COLUMN (62%) ========== -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.62"
+                    android:orientation="vertical"
+                    android:background="@color/szu_bg"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="8dp">
+
+                    <!-- 4-Column Navigation Grid -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false"
+                        android:background="@color/white">
+
+                        <!-- ==== COLUMN 1: 教师事务 ==== -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="1px">
+
+                            <!-- Header -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/col_header_height"
+                                android:text="教师事务"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@color/szu_primary" />
+
+                            <!-- Menu Items -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@color/szu_panel"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 办事大厅" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 教师邮箱@" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 畅课平台" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· OA系统" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 教务部" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 研究生院" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 科学技术" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 社会科学" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 人力资源" android:textColor="@color/szu_accent" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 实验设备" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 财务服务" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 招标采购" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <!-- Expand arrows -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="28dp"
+                                android:text="&#8743;&#10;&#8743;"
+                                android:textColor="@color/szu_text_hint"
+                                android:textSize="12sp"
+                                android:gravity="center"
+                                android:background="@color/szu_panel"
+                                android:lineSpacingMultiplier="0.4" />
+                        </LinearLayout>
+
+                        <!-- ==== COLUMN 2: 学生事务 ==== -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="1px">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/col_header_height"
+                                android:text="学生事务"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@color/szu_primary" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@color/szu_panel"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· UOOC课程" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 学生邮箱@" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 本科生选课" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 研究生选课" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 学生工作" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 事务中心" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 心理咨询" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 缴学杂费" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 考研考博" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 就业指导" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 本科生成绩" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 研究生成绩" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="28dp"
+                                android:text="&#8743;&#10;&#8743;"
+                                android:textColor="@color/szu_text_hint"
+                                android:textSize="12sp"
+                                android:gravity="center"
+                                android:background="@color/szu_panel"
+                                android:lineSpacingMultiplier="0.4" />
+                        </LinearLayout>
+
+                        <!-- ==== COLUMN 3: 荔园生活 ==== -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="1px">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/col_header_height"
+                                android:text="荔园生活"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@color/szu_primary" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@color/szu_panel"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 一网通办" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 创新创业" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 团学表彰" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 工会活动" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 学生活动" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 缤纷荔园" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 校园融媒" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 体育场馆" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 勤工助学" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 国际交流" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 总医院" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 华南医院" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="28dp"
+                                android:text="&#8743;&#10;&#8743;"
+                                android:textColor="@color/szu_text_hint"
+                                android:textSize="12sp"
+                                android:gravity="center"
+                                android:background="@color/szu_panel"
+                                android:lineSpacingMultiplier="0.4" />
+                        </LinearLayout>
+
+                        <!-- ==== COLUMN 4: 网上服务 ==== -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/col_header_height"
+                                android:text="网上服务"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@color/szu_primary" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@color/szu_panel"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 图书馆" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 信息服务" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 校务速办" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 会议室申请" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 校史馆预约" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 校园一卡" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 故障报修" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 失物招领" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 后勤保障" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 正版软件" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 基金会" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:text="· 中行网银" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" android:gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="28dp"
+                                android:text="&#8743;&#10;&#8743;"
+                                android:textColor="@color/szu_text_hint"
+                                android:textSize="12sp"
+                                android:gravity="center"
+                                android:background="@color/szu_panel"
+                                android:lineSpacingMultiplier="0.4" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Bottom 4 Campus Images -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/bottom_img_height"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="0dp"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_campus1"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_campus2"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_campus1"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_campus2"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</HorizontalScrollView>
