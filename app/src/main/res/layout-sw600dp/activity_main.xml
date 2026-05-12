@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Phone: stacked vertical layout -->
+<!-- Tablet: side-by-side 38/62 layout -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_height" />
 
-        <!-- Login Navigation Bar (inline, too light for its own Fragment) -->
+        <!-- Login Navigation Bar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/login_bar_height"
@@ -28,12 +28,7 @@
             android:paddingStart="14dp"
             android:paddingEnd="14dp">
 
-            <View
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/ic_user_placeholder"
-                android:layout_marginEnd="6dp" />
-
+            <View android:layout_width="22dp" android:layout_height="22dp" android:background="@drawable/ic_user_placeholder" android:layout_marginEnd="6dp" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="陈己润" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  |  " android:textColor="@color/szu_border" android:textSize="@dimen/text_body" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="个人中心" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
@@ -43,18 +38,28 @@
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="说明" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
         </LinearLayout>
 
-        <!-- Left Panel Fragment -->
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_left_panel"
-            android:name="com.example.ex3.ui.fragments.LeftPanelFragment"
+        <!-- Main Content: Left 38% + Right 62% -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
-        <!-- Right Panel Fragment -->
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_right_panel"
-            android:name="com.example.ex3.ui.fragments.RightPanelFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <!-- Left Panel -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_left_panel"
+                android:name="com.example.ex3.ui.fragments.LeftPanelFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.38" />
+
+            <!-- Right Panel -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_right_panel"
+                android:name="com.example.ex3.ui.fragments.RightPanelFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.62" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

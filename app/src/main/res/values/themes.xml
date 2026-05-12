@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Ex3" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.Ex3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/szu_dark</item>
+        <item name="colorPrimaryDark">@color/szu_dark</item>
         <item name="android:windowBackground">@color/szu_bg</item>
         <item name="android:statusBarColor">@color/szu_dark</item>
     </style>
