@@ -34,13 +34,13 @@
                 android:background="@drawable/ic_user_placeholder"
                 android:layout_marginEnd="6dp" />
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="陈己润" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" />
+            <TextView android:id="@+id/tv_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="陈己润" android:textColor="@color/szu_text_primary" android:textSize="@dimen/text_body" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  |  " android:textColor="@color/szu_border" android:textSize="@dimen/text_body" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="个人中心" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
+            <TextView android:id="@+id/tv_personal_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="个人中心" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  |  " android:textColor="@color/szu_border" android:textSize="@dimen/text_body" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="注册" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
+            <TextView android:id="@+id/tv_register" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="注册" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  |  " android:textColor="@color/szu_border" android:textSize="@dimen/text_body" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="说明" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
+            <TextView android:id="@+id/tv_help" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="说明" android:textColor="@color/szu_text_secondary" android:textSize="@dimen/text_body" />
         </LinearLayout>
 
         <!-- Left Panel Fragment -->

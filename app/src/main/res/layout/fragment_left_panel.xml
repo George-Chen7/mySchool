@@ -30,6 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_auth_notice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -87,6 +88,7 @@
         android:background="@color/szu_border">
 
         <TextView
+            android:id="@+id/tab_important"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -99,6 +101,7 @@
             android:background="@color/szu_primary" />
 
         <TextView
+            android:id="@+id/tab_news"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -110,6 +113,7 @@
             android:background="@color/white" />
 
         <TextView
+            android:id="@+id/tab_lecture"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
