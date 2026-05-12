@@ -85,7 +85,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="@color/szu_primary" />
+                android:background="@color/szu_accent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -205,7 +205,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="@color/szu_primary" />
+                android:background="@color/szu_accent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
